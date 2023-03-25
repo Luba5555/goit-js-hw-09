@@ -10,9 +10,14 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-}
+  
+ }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+.timerbody {
+  background: linear-gradient(0deg, rgba(35,228,226,1) 0%, rgba(251,242,50,1) 100%);
 }
