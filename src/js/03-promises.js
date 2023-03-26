@@ -30,9 +30,9 @@ const delay = parseInt(form.delay.value);
 const step = parseInt(form.step.value);
 const amount = parseInt(form.amount.value);
 
-for (let i = 1; i < amount; i++) {
-  let totalDelay = delay + step*i;
-  
+let totalDelay = delay;
+for (let i = 1; i <= amount; i++) {
+    
   createPromise(i, totalDelay)
   .then(({ position, delay }) => {
     Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -42,6 +42,7 @@ for (let i = 1; i < amount; i++) {
     Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
     console.log(`❌ Rejected promise ${position} in ${delay}ms`);
   });
+  totalDelay = delay + step*i;
 }
 }
 
